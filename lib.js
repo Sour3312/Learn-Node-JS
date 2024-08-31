@@ -1,9 +1,7 @@
-function sum(a, b) {
+exports.sum = (a, b) => {
     return a + b;
 }
 
-function sub(a, b) {
+exports.sub = (a, b) => {
     return a - b;
 }
-
-export {sum,sub}

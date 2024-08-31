@@ -1,5 +1,5 @@
 // 1. import export
 
-import {sum,sub} from './lib.js';
+const lib = require('./lib');
 
-console.log(sum(10,12),sub(10,12));
+console.log(lib.sum(12,23),lib.sub(100,78));
