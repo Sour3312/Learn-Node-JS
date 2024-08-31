@@ -1,5 +1,19 @@
-// 1. import export
+// 2. file system
 
-const lib = require('./lib');
+// 2.1 synchronous way (read the text file)
 
-console.log(lib.sum(12,23),lib.sub(100,78));
+// const fs = require("fs");
+// console.log("1");
+// console.log(fs.readFileSync("index.txt", "utf-8"));
+// console.log("2");
+
+// 2.2 async way
+console.log("1");
+console.log(performance.now());
+
+const fs = require("fs");
+fs.readFile("index.txt", "utf-8", (err, txt) => {
+  console.log(txt);
+});
+console.log("2");
+console.log(performance.now());
