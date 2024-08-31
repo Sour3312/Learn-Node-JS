@@ -1,26 +1,34 @@
-// pure node js code without express
+// pure node js code without express v2
+// with html & json files
 
-const http = require('http');
+const http = require("http");
+const fs = require("fs");
 
-let obj ={'name':'sourabh'}
+let file = fs.readFileSync("index.html", "utf-8");
+let jsonfile = fs.readFileSync("data.json", "utf-8");
 
-let server = http.createServer((req,res)=>{
-    console.log("server started");
-    console.log(req.url);
-    
-    res.setHeader('Sourabh','Its a header'); // custom header
-    res.setHeader('Content-Type','application/json'); 
-    res.end(JSON.stringify(obj));
+let server = http.createServer((req, res) => {
+  console.log("server started");
+
+  switch (req.url) {
+    case "/": 
+      // http://localhost:8080/
+      res.setHeader("Content-type", "text/html");
+      res.end(file);
+      break;
+
+    case "/api":
+      //localhost:8080/api
+      res.setHeader("Content-type", "application/json");
+      res.end(jsonfile);
+      break;
+
+    default: 
+      // http://localhost:8080/kuchbhi
+      res.writeHead("404");
+      res.end();
+      break;
+  }
 });
 
 server.listen(8080);
-
-
-// every time the content-type matters always
-    // text/html - treat as html otherwise normal string
-    // application - treat as json otherwise normal string
-
-// we cannot pass object directly to res.end it will give error. so we need to convert that into string. 
-// but the problem is node cannot understand we are passing json to it not string. so we need to use (content-type application/json)
-    // without (content-type application/json) - treat as string
-    // with (content-type application/json) - treat as json
