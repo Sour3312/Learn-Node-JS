@@ -1,37 +1,41 @@
-// intro to express js
+// basics of middleware in node js
+// https://expressjs.com/en/5x/api.html#req
 
-const express = require('express');
-const fs = require('fs');
+const express = require("express");
+const fs = require("fs");
 
 let server = express();
 
-let json = JSON.parse(fs.readFileSync('data.json','utf-8'));
+let json = JSON.parse(fs.readFileSync("data.json", "utf-8"));
 
-server.get('/',(req,res)=>{
-  // res.json({type:'GET'});
+server.use((req, res, next) => {
+  // middleware (use to manupulate req & res)
+  console.log(req.ip, req.xhr, req.method, req.hostname);
+  console.log(req.get("User-Agent"));
+  next();
+});
+
+let auth = (req, res, next) => {
+  if (req.query.password == 123) {
+    next();
+  } else {
+    res.sendStatus(401);
+  }
+};
+
+// server.use(auth); // for all routes(globally) application level middleware
+
+server.get("/", auth, (req, res) => { // route level middleware
+  // we can use middleware manuallly here
   res.json(json);
-  // res.sendStatus(404);
-  // res.send('<h1>Sourabh</h1>');
-  // res.status(201).send('<h1>Sourabh</h1>');
-  // res.sendFile('C:\Users\SOURABH KUMAR MAHATO\Desktop\Node JS\index.html')
 });
 
-server.post('/',(req,res)=>{
-  res.json({type:'POST'})
+server.post("/", (req, res) => {
+  res.json({ type: "POST" });
 });
 
-server.patch('/',(req,res)=>{
-  res.json({type:'PATCH'});
+server.listen(8080, () => {
+  console.log("server started");
 });
 
-server.put('/',(req,res)=>{
-  res.json({type:'PUT'})
-});
-
-server.delete('/',(req,res)=>{
-  res.json({type:'DELETE'})
-});
-
-server.listen(8080,()=>{
-  console.log('server started');
-});
+// we can put middleware for all or for any single route also
