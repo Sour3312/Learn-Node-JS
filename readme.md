@@ -26,7 +26,7 @@ Node.js is a single-threaded, asynchronous, and event-driven runtime built on Ch
 5. **Browser vs Node**: While both run JavaScript, Node.js provides server-side capabilities and doesn't include browser-specific APIs like `window` or `document`.
 
 ## Modules
-- **Built-in Modules**: Core modules such as `http`, `fs`, `path`, and `events` come bundled with Node.js.
+- **Built-in Modules**: Core modules such as `http`, `fs`, `path`, `os` and `events` come bundled with Node.js.
 - **Custom Modules**: User-defined modules that encapsulate specific functionality.
 - **Third-Party Modules**: External packages, often installed via NPM, that extend Node.js functionality (e.g., Express, Axios).
 
