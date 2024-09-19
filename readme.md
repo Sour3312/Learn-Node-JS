@@ -42,13 +42,13 @@ Node.js provides a powerful, fast, and scalable platform for building a variety 
 
 ## Function vs event, Express, node js vs express js
 
-## advantage of express
-1. easy to use/minimun code
-2. midlleware support
-3. flexible routing system
-4. template engine integration (can send html or any content dynamically)
-    - ejs
-    - pug
-    - handlebar/mustache
+## Advantage of express
+ - **Easy to use/Minimun code**
+ - **Midlleware Support**
+ - **Flexible Routing system**
+ - **template engine integration (can send html or any content dynamically)**
+    : ejs
+    : pug
+    : handlebar/mustache
 
-## middleware, type, app.use()
+## Middleware, Type, app.use()
