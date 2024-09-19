@@ -2,6 +2,7 @@
 
 const express = require("express");
 const fs = require("fs");
+const os = require("os");
 
 let server = express();
 
@@ -33,10 +34,19 @@ server.get("/", auth, (req, res) => {
   res.json(json);
 });
 
+server.get("/ip", auth, (req, res) => {
+  const clientIp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+
+  res.json(clientIp);
+  console.log(os.type(),os.userInfo());
+  console.log(clientIp);
+  
+});
+
 server.post("/", (req, res) => {
   res.json({ type: "POST" });
 });
 
-server.listen(8080, () => {
+server.listen(3000, () => {
   console.log("server started");
 });

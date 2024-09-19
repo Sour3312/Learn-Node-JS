@@ -39,3 +39,16 @@ Node.js is a single-threaded, asynchronous, and event-driven runtime built on Ch
 
 ## Conclusion
 Node.js provides a powerful, fast, and scalable platform for building a variety of applications, particularly those requiring real-time interactions. Understanding its core concepts, event-driven nature, and asynchronous handling mechanisms is crucial for developing efficient Node.js applications.
+
+## Function vs event, Express, node js vs express js
+
+## advantage of express
+1. easy to use/minimun code
+2. midlleware support
+3. flexible routing system
+4. template engine integration (can send html or any content dynamically)
+    - ejs
+    - pug
+    - handlebar/mustache
+
+## middleware, type, app.use()
