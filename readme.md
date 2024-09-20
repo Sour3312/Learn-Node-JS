@@ -95,7 +95,6 @@ Middleware functions accept up to four parameters: `err`, `req`, `res`, and `nex
 1. **Application-Level Middleware**: Used across the entire application using `app.use()`. It is applied globally for every request.
 
    ```js
-   // Your code here
    app.use((req, res, next) => {
      console.log("Application-Level Middleware");
      next();
@@ -105,7 +104,6 @@ Middleware functions accept up to four parameters: `err`, `req`, `res`, and `nex
 2. **Router-Level Middleware**: Specific to individual routes. You can apply middleware to a specific route handler, allowing for more granular control.
 
 ```js
-// Your code here
 const router = express.Router();
 
 router.use((req, res, next) => {
@@ -123,7 +121,6 @@ app.use("/api", router);
 3. **Error-Handling Middleware**: Middleware that handles errors in the application. It uses four parameters `(err, req, res, next)`.
 
 ```js
-// Your code here
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send("Something broke!");
@@ -133,7 +130,6 @@ app.use((err, req, res, next) => {
 4. **Built in Middleware**: Express comes with some built-in middleware functions such as express.static to serve static files.
 
 ```js
-// Your code here
 app.use(express.static("public"));
 ```
 
@@ -180,3 +176,9 @@ app.listen(3000, () => {
   console.log("Server is running on port 3000");
 });
 ```
+
+### If you have 5 middleware in a Node.js application, where do you put your error handling?
+
+You should place your error-handling middleware after all other middleware(last) and route handlers. This ensures that it can catch any errors that occur in the previous middleware or routes.
+
+If an error occurs, the process will skip to the error handling method. For example, if there are five methods and an error happens in the third one, but the error handling is in the last method, it will be catchable. However, if the error handling is in the third method and the error occurs in the fourth, it will not be catchable.
