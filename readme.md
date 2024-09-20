@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Node.js is a single-threaded, asynchronous, and event-driven runtime built on Chrome's V8 JavaScript engine. It is widely used for building fast, scalable, and cross-platform applications.
+Node.js is a single-threaded, asynchronous and event-driven runtime built on Chrome's V8 JavaScript engine. It is widely used for building fast, scalable and cross-platform applications.
 
 ## Features & Advantages
 
@@ -10,7 +10,7 @@ Node.js is a single-threaded, asynchronous, and event-driven runtime built on Ch
 2. **Event-Driven Architecture**: Ideal for applications such as chat apps and gaming, where real-time updates are essential.
 3. **Powered by V8 Engine**: Node.js uses Google's V8 engine, ensuring high performance and fast execution of JavaScript code.
 4. **Scalability**: Easily scales across multiple servers, making it suitable for large-scale applications.
-5. **Cross-Platform**: Runs on various operating systems, including Windows, macOS, and Linux.
+5. **Cross-Platform**: Runs on various operating systems, including Windows, macOS and Linux.
 
 ## Disadvantages
 
@@ -25,7 +25,7 @@ Node.js is a single-threaded, asynchronous, and event-driven runtime built on Ch
 ## Core Concepts
 
 1. **NPM (Node Package Manager)**: A tool for managing packages and dependencies in Node.js applications.
-2. **Package.json**: A file that holds metadata about the project, including dependencies, scripts, and configurations.
+2. **Package.json**: A file that holds metadata about the project, including dependencies, scripts and configurations.
 3. **Node_modules**: The directory where all project dependencies are stored.
 4. **Single/Multi-threading**: Node.js is single-threaded but can handle concurrent operations using its event loop and non-blocking I/O model.
 5. **Browser vs Node**: While both run JavaScript, Node.js provides server-side capabilities and doesn't include browser-specific APIs like `window` or `document`.
@@ -46,7 +46,7 @@ Node.js is a single-threaded, asynchronous, and event-driven runtime built on Ch
 
 ## Conclusion
 
-Node.js provides a powerful, fast, and scalable platform for building a variety of applications, particularly those requiring real-time interactions. Understanding its core concepts, event-driven nature, and asynchronous handling mechanisms is crucial for developing efficient Node.js applications.
+Node.js provides a powerful, fast and scalable platform for building a variety of applications, particularly those requiring real-time interactions. Understanding its core concepts, event-driven nature and asynchronous handling mechanisms is crucial for developing efficient Node.js applications.
 
 ## Topics Covered
 
@@ -54,18 +54,18 @@ Node.js provides a powerful, fast, and scalable platform for building a variety 
 
 #### Function vs Event
 
-- **Function-based architecture** is synchronous: a function is called, it runs its logic, and then returns a value.
-- **Event-based architecture** (such as Node.js) operates asynchronously: events trigger handlers, and the system doesn't need to wait for one event to complete before handling the next.
+- **Function-based architecture** is synchronous: a function is called, it runs its logic and then returns a value.
+- **Event-based architecture** (such as Node.js) operates asynchronously: events trigger handlers and the system doesn't need to wait for one event to complete before handling the next.
 
 #### Node.js vs Express.js
 
 - **Node.js** is a JavaScript runtime that allows developers to run JavaScript on the server. It provides low-level APIs like HTTP and file system handling.
-- **Express.js** is a lightweight web framework built on top of Node.js that provides an abstraction over Node’s HTTP module, offering features like routing, middleware support, and easier handling of requests and responses.
+- **Express.js** is a lightweight web framework built on top of Node.js that provides an abstraction over Node’s HTTP module, offering features like routing, middleware support and easier handling of requests and responses.
 
 ### 2. Advantages of Express.js
 
 - **Easy to use/Minimal Code**: Express offers a simple API that makes it easy to build web applications with less code compared to raw Node.js.
-- **Middleware Support**: Express allows the use of middleware, making it easy to implement features like request parsing, logging, authentication, and more.
+- **Middleware Support**: Express allows the use of middleware, making it easy to implement features like request parsing, logging, authentication and more.
 - **Flexible Routing System**: Express provides an advanced routing system that can handle multiple HTTP methods and endpoints.
 - **Template Engine Integration**: Express can be integrated with various template engines to render dynamic content. Some commonly used template engines include:
   - `ejs`
@@ -74,7 +74,7 @@ Node.js provides a powerful, fast, and scalable platform for building a variety 
 
 ### 3. Middleware in Express.js
 
-Middleware functions are functions that have access to the request object (`req`), response object (`res`), and the `next` middleware function in the application's request-response cycle. Middleware can perform the following tasks:
+Middleware functions are functions that have access to the request object (`req`), response object (`res`) and the `next` middleware function in the application's request-response cycle. Middleware can perform the following tasks:
 
 - Execute any code.
 - Modify the request and response objects.
@@ -83,7 +83,7 @@ Middleware functions are functions that have access to the request object (`req`
 
 #### Middleware Parameters
 
-Middleware functions accept up to four parameters: `err`, `req`, `res`, and `next`.
+Middleware functions accept up to four parameters: `err`, `req`, `res` and `next`.
 
 - `err`: Error object (used in error-handling middleware).
 - `req`: Request object.
