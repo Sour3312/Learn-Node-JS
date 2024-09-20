@@ -181,4 +181,4 @@ app.listen(3000, () => {
 
 You should place your error-handling middleware after all other middleware(last) and route handlers. This ensures that it can catch any errors that occur in the previous middleware or routes.
 
-If an error occurs, the process will skip to the error handling method. For example, if there are five methods and an error happens in the third one, but the error handling is in the last method, it will be catchable. However, if the error handling is in the third method and the error occurs in the fourth, it will not be catchable.
+If an error occurs, the process will skip & jump to the error handled middleware. For example, if there are five middlewares and an error happens in the third one, but the error handling is in the last middleware, it will be catchable. However, if the error handling is in the third middleware and the error occurs in the fourth, it will not be catchable.
