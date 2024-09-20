@@ -182,3 +182,11 @@ app.listen(3000, () => {
 You should place your error-handling middleware after all other middleware(last) and route handlers. This ensures that it can catch any errors that occur in the previous middleware or routes.
 
 If an error occurs, the process will skip & jump to the error handled middleware. For example, if there are five middlewares and an error happens in the third one, but the error handling is in the last middleware, it will be catchable. However, if the error handling is in the third middleware and the error occurs in the fourth, it will not be catchable.
+
+## Advantages of Middleware
+
+- **Durability**: Functions are divided into smaller pieces, so if an error occurs in one, it won’t impact the others. Only the affected module needs repair.
+- **Reusability**: MV's can be reused across different applications or services.
+- **Security**: Middleware can enhance security by managing access and protecting data.
+- **Flexible Control Flow**: It can efficiently handle millions of requests, either for all routes or selectively for specific ones.
+- **Third-Party Middleware Integration**: You can easily incorporate high-quality third-party middleware solutions as needed.
